@@ -47,7 +47,7 @@ cd Religious-Tourism
 	2.	Install dependencies:
 
 npm install  
-
+npm install bootstrap
 
 	3.	Start the development server:
 
