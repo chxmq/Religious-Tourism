@@ -1,64 +1,50 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import './Chatbox.css'; // Optional CSS for styling
+import './Chatbox.css'; // Import the CSS file
+import destinations from './data'; // Import the destinations data
 
+const Chatbox = () => {
+    const [messages, setMessages] = useState([]); // Empty initial state for messages
+    const [input, setInput] = useState('');
+    const [started, setStarted] = useState(false); // Track if user has started typing
 
-function Chatbox() {
-  const [query, setQuery] = useState('');
-  const [conversation, setConversation] = useState([]);
+    const handleSend = () => {
+        if (!input.trim()) return;
 
-  // Function to handle user query
-  const handleQuery = async () => {
-    if (!query.trim()) return;
+        const userMessage = { sender: 'user', text: input };
+        setMessages([...messages, userMessage]);
 
-    // Add user's query to the conversation
-    setConversation((prev) => [...prev, { role: 'user', content: query }]);
+        const destinationKey = input.toLowerCase().trim();
+        const botResponse = destinations[destinationKey] || "Sorry, I don't have information about that destination.";
 
-    try {
-      const response = await axios.post('/api/chatbot/query', { query });
+        const botMessage = { sender: 'bot', text: botResponse };
+        setMessages([...messages, userMessage, botMessage]);
 
-      // Add chatbot's response to the conversation
-      setConversation((prev) => [
-        ...prev,
-        { role: 'bot', content: response.data.reply },
-      ]);
-    } catch (error) {
-      console.error('Error fetching chatbot response:', error);
-      setConversation((prev) => [
-        ...prev,
-        { role: 'bot', content: 'Sorry, something went wrong. Please try again later.' },
-      ]);
-    }
+        setInput('');
+        setStarted(true); // Mark interaction has started
+    };
 
-    // Clear the query input field
-    setQuery('');
-  };
-
-  return (
-    <div className="chatbox">
-      <h2>Ask About Religious Tourism</h2>
-      <div className="chatbox-conversation">
-        {conversation.map((message, index) => (
-          <div
-            key={index}
-            className={`chatbox-message ${
-              message.role === 'user' ? 'user-message' : 'bot-message'
-            }`}
-          >
-            <p>{message.content}</p>
-          </div>
-        ))}
-      </div>
-      <div className="chatbox-input">
-        <textarea
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Type your question here..."
-        />
-        <button onClick={handleQuery}>Send</button>
-      </div>
-    </div>
-  );
-}
+    return (
+        <div className="chatbox">
+            <div className="chatbox-conversation">
+                {messages.map((msg, index) => (
+                    <div key={index} className={`chatbox-message ${msg.sender}-message`}>
+                        {msg.text}
+                    </div>
+                ))}
+            </div>
+            <div className="chatbox-input">
+                <input 
+                    type="text" 
+                    value={input} 
+                    onChange={(e) => setInput(e.target.value)} 
+                    placeholder="Message Artilect" // Display placeholder text here
+                />
+                <button onClick={handleSend}>
+                    <img src="/Send arrow.png" alt="Send" />
+                </button>
+            </div>
+        </div>
+    );
+};
 
 export default Chatbox;
