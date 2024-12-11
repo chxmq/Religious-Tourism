@@ -5,6 +5,9 @@
   border: 2px solid #ddd;
   border-radius: 10px;
   background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  height: 500px; /* Fixed height for consistent layout */
 }
 
 .chatbox h2 {
@@ -13,7 +16,8 @@
 }
 
 .chatbox-conversation {
-  max-height: 300px;
+  flex-grow: 1;
+  max-height: 400px;
   overflow-y: auto;
   margin-bottom: 15px;
   padding: 10px;
@@ -27,6 +31,7 @@
   padding: 10px;
   border-radius: 5px;
   max-width: 80%;
+  word-wrap: break-word;
 }
 
 .user-message {
@@ -44,26 +49,33 @@
 .chatbox-input {
   display: flex;
   gap: 10px;
+  align-items: center; /* Align the button with the input */
 }
 
-.chatbox-input textarea {
+.chatbox-input input {
   flex-grow: 1;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  resize: none;
   height: 50px;
 }
 
 .chatbox-input button {
-  padding: 10px 20px;
-  background-color: #00796b;
-  color: #fff;
+  padding: 0;
   border: none;
-  border-radius: 5px;
+  background: none;
   cursor: pointer;
 }
 
-.chatbox-input button:hover {
-  background-color: #004d40;
+.chatbox-input button img {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+}
+
+.chatbox-placeholder {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+  margin-bottom: 10px;
 }
