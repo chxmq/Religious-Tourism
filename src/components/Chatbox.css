@@ -1,63 +1,80 @@
+/* General chatbox container styles */
 .chatbox {
-  max-width: 600px;
-  margin: 20px auto;
+  width: 80%; /* Set a width for the chatbox */
+  max-width: 600px; /* Maximum width for responsiveness */
+  margin: 0 auto; /* Center the chatbox horizontally */
   padding: 20px;
   border: 2px solid #ddd;
   border-radius: 10px;
   background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center the chatbox content */
   height: 500px; /* Fixed height for consistent layout */
 }
 
-.chatbox h2 {
-  text-align: center;
-  color: #333;
-}
-
+/* Center the conversation messages */
 .chatbox-conversation {
   flex-grow: 1;
-  max-height: 400px;
   overflow-y: auto;
   margin-bottom: 15px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff;
+  width: 100%; /* Make conversation take up full width */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the messages */
 }
 
-.chatbox-message {
-  margin-bottom: 10px;
+/* User's message style */
+.user-message {
+  align-self: flex-end; /* Align user's message to the right */
+  background-color: #dcf8c6; /* WhatsApp sender green */
+  color: #000; /* Black text for contrast */
+  border: 1px solid #cde5b2; /* Optional border for subtle distinction */
   padding: 10px;
   border-radius: 5px;
-  max-width: 80%;
+  margin: 5px;
+  max-width: 75%; /* Limit the width of user messages */
   word-wrap: break-word;
+  white-space: pre-wrap; /* Preserve newlines in user messages */
 }
 
-.user-message {
-  align-self: flex-end;
-  background-color: #e0f7fa;
-  color: #006064;
-}
-
+/* Bot's message style */
 .bot-message {
-  align-self: flex-start;
-  background-color: #ffe0b2;
-  color: #bf360c;
+  align-self: flex-start; /* Align bot's message to the left */
+  background-color: #40444b; /* Dark gray */
+  color: #ffffff; /* White text */
+  border: none; /* No border for a cleaner look */
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+  max-width: 75%; /* Limit the width of bot messages */
+  word-wrap: break-word;
+  white-space: pre-wrap; /* Ensure newlines and spaces are preserved */
 }
 
+/* Input field and button styles */
 .chatbox-input {
   display: flex;
+  justify-content: flex-start; /* Align the input message bar to the left */
+  align-items: center;
   gap: 10px;
-  align-items: center; /* Align the button with the input */
+  width: 100%; /* Take full width of the container */
 }
 
 .chatbox-input input {
   flex-grow: 1;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  height: 50px;
+  padding: 12px;
+  border-radius: 20px; /* Rounded corners to resemble a message bubble */
+  background-color: #333; /* Dark background for input field */
+  color: white; /* White text color for the input */
+  border: none; /* Remove the border */
+  max-width: 90%; /* Limit input width to not stretch to full width */
+  outline: none; /* Remove focus outline */
+  font-size: 14px; /* Adjust font size for better readability */
 }
 
 .chatbox-input button {
@@ -73,9 +90,22 @@
   object-fit: contain;
 }
 
-.chatbox-placeholder {
-  text-align: center;
-  font-style: italic;
-  color: #777;
-  margin-bottom: 10px;
+/* Typing cursor styles */
+.typing-cursor {
+  position: absolute;
+  width: 12px; /* Make the cursor slightly larger */
+  height: 12px; /* Make the cursor slightly larger */
+  background-color: white; /* White cursor */
+  border-radius: 50%; /* Circular shape */
+  animation: blink 0.8s step-end infinite; /* Blinking effect */
+  bottom: 0;
+  left: 100%; /* Place it next to the text */
+  z-index: 10; /* Ensure cursor is above the text */
+}
+
+/* Cursor blinking effect */
+@keyframes blink {
+  50% {
+    opacity: 50;
+  }
 }
