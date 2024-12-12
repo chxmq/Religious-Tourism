@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-
-function Header() {
+function Header({ showImages }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
@@ -15,20 +14,24 @@ function Header() {
   ];
 
   useEffect(() => {
-    const changeImage = () => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    };
+    if (showImages) {
+      const changeImage = () => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      };
 
-    const interval = setInterval(changeImage, 3000);
+      const interval = setInterval(changeImage, 3000);
 
-    return () => clearInterval(interval);
-  }, [images.length]);
+      return () => clearInterval(interval);
+    }
+  }, [showImages, images.length]);
 
   return (
     <header
       id="header"
       style={{
-        backgroundImage: `url(${images[currentImageIndex]})`,
+        backgroundImage: showImages
+          ? `url(${images[currentImageIndex]})`
+          : "none", // Hide background images when false
       }}
     ></header>
   );
