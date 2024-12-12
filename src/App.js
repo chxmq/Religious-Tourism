@@ -6,19 +6,53 @@ import Home from "./pages/Home";
 import Booking from "./pages/Booking";
 import Timings from "./pages/Timings";
 import Itinerary from "./pages/Itinerary";
-import Chatbox from "./components/Chatbox";
+import Chatbox from "./components/Chatbox"; // Chatbox should be always visible
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <Header />  {/* Include the Header component here */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/booking" element={<Booking />} />
-        <Route path="/timings" element={<Timings />} />
-        <Route path="/itinerary" element={<Itinerary />} />
+        <Route 
+          path="/" 
+          element={
+            <>
+              <Header showImages={true} />  {/* Pass prop to show images */}
+              <Home />
+            </>
+          }
+        />
+        <Route 
+          path="/booking" 
+          element={
+            <>
+              <Header showImages={true} />
+              <Booking />
+            </>
+          }
+        />
+        <Route 
+          path="/timings" 
+          element={
+            <>
+              <Header showImages={true} />
+              <Timings />
+            </>
+          }
+        />
+        <Route 
+          path="/itinerary" 
+          element={
+            <>
+              {/* Pass false to hide images */}
+              <Header showImages={false} />
+              <Itinerary />
+            </>
+          }
+        />
       </Routes>
+
+      {/* Chatbox is always visible */}
       <Chatbox />
     </Router>
   );
