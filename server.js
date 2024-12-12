@@ -20,7 +20,7 @@ app.post('/api/chat', async (req, res) => {
             { inputs: userMessage },
             {
                 headers: {
-                    'Authorization': `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`,
+                    'Authorization': `hf_bearer`,
                     'Content-Type': 'application/json',
                 },
             }
