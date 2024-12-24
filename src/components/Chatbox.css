@@ -1,12 +1,19 @@
+<<<<<<< HEAD
 /* General chatbox container styles */
 .chatbox {
   width: 80%; /* Set a width for the chatbox */
   max-width: 600px; /* Maximum width for responsiveness */
   margin: 0 auto; /* Center the chatbox horizontally */
+=======
+.chatbox {
+  max-width: 600px;
+  margin: 20px auto;
+>>>>>>> 5ac5a10 (first commit)
   padding: 20px;
   border: 2px solid #ddd;
   border-radius: 10px;
   background-color: #f9f9f9;
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   align-items: center; /* Center the chatbox content */
@@ -16,12 +23,24 @@
 /* Center the conversation messages */
 .chatbox-conversation {
   flex-grow: 1;
+=======
+}
+
+.chatbox h2 {
+  text-align: center;
+  color: #333;
+}
+
+.chatbox-conversation {
+  max-height: 300px;
+>>>>>>> 5ac5a10 (first commit)
   overflow-y: auto;
   margin-bottom: 15px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff;
+<<<<<<< HEAD
   width: 100%; /* Make conversation take up full width */
   display: flex;
   flex-direction: column;
@@ -108,4 +127,52 @@
   50% {
     opacity: 50;
   }
+=======
+}
+
+.chatbox-message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 80%;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: #e0f7fa;
+  color: #006064;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background-color: #ffe0b2;
+  color: #bf360c;
+}
+
+.chatbox-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chatbox-input textarea {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: none;
+  height: 50px;
+}
+
+.chatbox-input button {
+  padding: 10px 20px;
+  background-color: #00796b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chatbox-input button:hover {
+  background-color: #004d40;
+>>>>>>> 5ac5a10 (first commit)
 }

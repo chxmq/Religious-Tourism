@@ -1,0 +1,79 @@
+/* TourismCards.css */
+
+/* Style for the card container */
+.card {
+    width: 18rem;
+    height: 25rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative; /* Required for position-based styling */
+    transition: transform 0.3s ease; /* Add a transition for hover effect */
+  }
+  
+  /* Hover effect for the whole card */
+  .card:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  
+  /* Style for the image container */
+  .card-img-container {
+    width: 100%;
+    height: 100%; /* Take up full height of the card */
+    position: relative; /* Required for positioning the link button over the image */
+  }
+  
+  /* Style for the image */
+  .card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the container proportionally */
+    display: block;
+  }
+  
+  /* Style for the link button */
+  .tourism-link {
+    text-decoration: none;
+    color: white;
+    background-color: #007bff; /* Blue background */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    position: absolute;
+    bottom: 10px;
+    left: 50%; /* Horizontally center the button */
+    /* Ensure it's centered */
+    z-index: 2; /* Ensures it overlays the image */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hover effect for the link */
+  .tourism-link:hover {
+    background-color: #f27c28;
+    transform: translateY(-3px); /* Adds a slight lift effect */
+    border-radius: 25% 10%;
+  }
+  
+  /* Add some padding between rows */
+  .text-center {
+    margin: 20px 0;
+  }
+  
+  /* General styling for the container */
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  #tittle{
+    color: #ff6612;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI';
+    font-optical-sizing: auto;
+    
+    font-style: normal;
+    font-size: 40px;
+  }
+
+ 
