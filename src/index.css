@@ -10,37 +10,26 @@ body {
   width: 100%;
   overflow-x: hidden;
   z-index: 1100;
-
 }
-
 
 body {
   font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   background-color: #f8f9fa;
   color: #333;
-
 }
 
 #header {
   background-size: cover;
   background-position: center;
-  height: 75vh;
+  height: 75vh !important;
   width: 100vw;
   margin-top: 40px;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   position: relative;
 }
-
-
-
-
 
 .header-content h1 {
   margin: 0;
@@ -57,8 +46,7 @@ footer {
   color: #fff;
   text-align: center;
   font-size: larger;
-  padding: 10px;
-  padding-top: 10PX;
+  padding: 10px 0;
   margin-bottom: 15px;
   position: static;
   bottom: 0;
@@ -68,160 +56,82 @@ footer {
 
 .footer-content ul {
   list-style: none;
-  padding: 0;
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin: 0.5rem 0 0;
+  margin: 0.5rem 0;
 }
 
 .footer-content ul li a {
   color: #cc3030;
   text-decoration: none;
   font-size: 1.9rem;
-  position: sticky;
-
-
 }
 
-/*----navbar---*/
+/* Navbar Styling */
 .container-fluid {
   background-color: hsla(200, 56%, 57%, 0.5);
   color: white;
-  overflow-x: hidden;
-  padding: 5px 0;
   position: fixed;
   top: 0;
-  margin-right: 5px;
   width: calc(100% - 30%);
   z-index: 10;
   box-shadow: 10px 5px 5px rgb(67, 66, 66);
-
   border-radius: 15px;
-
-
-  body {
-    padding-top: 60px;
-  }
-
-
 }
 
-<<<<<<< HEAD
-navbar .navbar-brand,
-=======
-/* Navbar Branding and Links */
 .navbar .navbar-brand,
->>>>>>> 5ac5a10 (first commit)
 .navbar .nav-link {
   color: rgb(255, 255, 255) !important;
   font-weight: bold;
   font-size: large;
-<<<<<<< HEAD
-=======
-  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
->>>>>>> 5ac5a10 (first commit)
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 #nav-tittle {
   font-family: "Playwrite HR Lijeva", cursive;
-<<<<<<< HEAD
   font-size: 25px;
-=======
-  font-size: 22px; /* Slightly reduced font size */
->>>>>>> 5ac5a10 (first commit)
-  font-optical-sizing: auto;
   font-weight: bolder;
-  font-style: normal;
 }
 
-<<<<<<< HEAD
-#navbarNav {
-  padding-left: 600px;
-}
-
-.nav-item {
-  display: inline-block;
-
-  font-family: "Playwrite HR Lijeva", cursive;
-
-  margin-right: 20px;
-  background-color: #2b2828;
-  border: 2px solid #f4f1f1;
-  border-radius: 25px;
-  text-align: center;
-=======
-/* Center the Navbar */
 #navbarNav {
   padding-left: 500px;
   display: flex;
   align-items: center;
-  gap: 10px; /* Reduced gap between nav items */
+  gap: 10px;
 }
 
-/* Navigation Items */
 .nav-item {
   display: inline-block;
   font-family: "Playwrite HR Lijeva", cursive;
-  margin-right: 15px; /* Reduced margin */
-  padding: 0px 10px; /* Reduced padding for smaller height */
+  margin-right: 15px;
+  padding: 3px;
   background-color: #2b2828;
   border: 2px solid #f4f1f1;
-  border-radius: 20px; /* Slightly smaller border radius */
+  border-radius: 20px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
->>>>>>> 5ac5a10 (first commit)
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-item a {
   text-decoration: none;
-<<<<<<< HEAD
-  color: #807878;
-  font-size: 10px;
-  font-weight: normal;
+  color: #f78b2c !important;
+  font-size: 11px;
 }
 
-.nav-item :hover {
+.nav-item:hover {
   color: #007BFF;
   cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 nav {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
+  padding: 5px 0;
 }
-=======
-  color: #f78b2c !important;
-  font-size: 11px; /* Slightly reduced font size */
-  font-weight: normal;
-}
-
-
-/* Hover Effect for Navigation Items */
-.nav-item:hover {
-  color: #007BFF; /* Text color on hover */
-  cursor: pointer;
-  transform: scale(1.1); /* Slightly enlarge the box */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Add a shadow for a lifted effect */
-}
-
-/* Overall Navbar Styling */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 5px; /* Reduced gap between nav elements */
-  padding: 5px 0; /* Reduce vertical padding for the navbar */
-}
-#nav-item{
-  margin-right: 2px;
-  padding-right: 2px;
-}
-
-
-
-
->>>>>>> 5ac5a10 (first commit)
 
 #homeh1 {
   font-family: "Playwrite HR Lijeva", cursive;
@@ -232,8 +142,4 @@ nav {
   font-family: "Playwrite HR Lijeva", cursive;
   font-weight: normal;
   font-size: larger;
-<<<<<<< HEAD
-=======
-  
->>>>>>> 5ac5a10 (first commit)
 }
