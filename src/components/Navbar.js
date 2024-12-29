@@ -1,11 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; 
-<<<<<<< HEAD
-=======
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
->>>>>>> 5ac5a10 (first commit)
 
 function Navbar() {
   return (
@@ -45,15 +42,12 @@ function Navbar() {
                 Itinerary
               </a>
             </li>
-<<<<<<< HEAD
-=======
             <li className="nav-item">
               <a className="nav-link" href="/itinerary">
               <i class="fa-solid fa-bolt" id="nav-icon"></i>
                   ChatBot
               </a>
             </li>
->>>>>>> 5ac5a10 (first commit)
           </ul>
         </div>
       </div>
