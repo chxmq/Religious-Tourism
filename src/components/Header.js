@@ -18,6 +18,10 @@ function Header() {
     "/assets/images/six.jpg",
    "/assets/images/three.avif",
     "/assets/images/temple1.jpg",
+    "/assets/images/christian.jpg",
+    "/assets/images/Gurudwar.jpg",
+    "/assets/images/buddhist.jpg",
+    "/assets/images/buddhist1.jpg",
     
     
   ];
@@ -37,7 +41,16 @@ function Header() {
     <header
       id="header"
       style={{
-        backgroundImage: `url(${images[currentImageIndex]})`,
+        position: "relative",
+        width: "100%",
+        height: "100vh",
+        backgroundImage: showImages
+          ? `url(${images[currentImageIndex]})`
+          : "none",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        opacity: showImages ? 0.6 : 1, // Adjust opacity here (0.6 = 60% visible)
       }}
     ></header>
 
