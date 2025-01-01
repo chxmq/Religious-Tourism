@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 
-function Header() {
+function Header({ showImages }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
