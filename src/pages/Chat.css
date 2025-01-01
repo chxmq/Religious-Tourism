@@ -1,0 +1,19 @@
+/* itinerary.css */
+
+.Chat-container {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.Chat-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.Chat-text {
+    font-size: 1.2rem;
+    color: #555;
+    font-weight: bold;
+}
